@@ -33,7 +33,7 @@ on linux_amd64
 
 Ожидаемый результат:
 
-1. Работоспособный кубернетес кластер.
+1. Работоспособный кубернетес кластер.![](4.png)
 2. В файле `~/.kube/config` находятся данные для доступа к кластеру.
 3. Команда `kubectl get pods --all-namespaces` отрабатывает без ошибок.
 
@@ -60,18 +60,18 @@ on linux_amd64
 
 
 ##  Что необходимо для сдачи задания
-1. [Репозиторий с конфигурационными файлами терраформа и готовность продемонстировать создание всех рессурсов с нуля.](https://github.com/Perovss/diplom_terraform_cloud)
+1. [Репозиторий с конфигурационными файлами терраформа](https://github.com/Perovss/diplom_terraform_cloud) и готовность продемонстировать создание всех рессурсов с нуля.
 
 2. Пример pull request с комментариями созданными atlantis'ом или снимки экрана из Terraform Cloud.
 ![t1](t1.png)
 ![t2](t2.png)
-3. Репозиторий с конфигурацией ansible, если был выбран способ создания кубернетес кластера при помощи ansible.
+3. [Репозиторий с конфигурацией ansible](https://github.com/Perovss/diplom_ansible/tree/main/kubespray), если был выбран способ создания кубернетес кластера при помощи ansible.
 
-4. Репозиторий с Dockerfile тестового приложения и ссылка на собранный docker image.
+4. [Репозиторий с Dockerfile тестового приложения](https://gitlab.com/perov.ss/netology-diplom) и [ссылка на собранный docker image](https://hub.docker.com/repository/docker/perovss/nginx.app).
 
-5. Репозиторий с конфигурацией кубернетес кластера.
+5. [Репозиторий с конфигурацией кубернетес кластера](https://github.com/Perovss/diplom_k8s_config/tree/main/manifests).
 
-6. Ссылка на тестовое приложение и веб интерфейс графаны с данными доступа.
+6. Ссылка на тестовое приложение и веб интерфейс графаны с данными доступа.   (`admin` / `admin`).
 
 
 
@@ -85,15 +85,3 @@ ansible-playbook -i kubespray/inventory/mycluster/inventory.ini  kubespray/clust
 ansible-playbook -i kubespray/inventory/diplom/inventory.ini kubespray/cluster.yml -e ansible_user=ubuntu -b --become-user=root
 
 
-
-
-
-https://hub.docker.com/repository/docker/perovss/nginx.app
-
-
-
-CI
-
-
-
-https://gitlab.com/perov.ss/netology-diplom/-/jobs/1781112211
