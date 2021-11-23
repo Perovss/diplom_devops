@@ -12,28 +12,27 @@
 
 ## Создание облачной инфраструктуры
 
-> Для начала необходимо подготовить облачную инфраструктуру в облаке AWS при помощи [Terraform](https://www.terraform.io/).
->
-> Особенности выполнения:
-> - Для выполнения задания следует активировать купон AWS, полученный от куратора курса.
-> - Бюджет купона ограничен, что следует иметь в виду при проектировании инфраструктуры и использовании ресурсов.
-> - Следует использовать последнюю стабильную версию [Terraform](https://www.terraform.io/).
->
-> Предварительная подготовка к установке и запуску kubernetes-кластера.
-> 1. При помощи IAM создайте service account, который будет в дальнейшем использоваться Terraform для работы с инфраструктурой.
-> 1. Подготовьте [backend](https://www.terraform.io/docs/language/settings/backends/index.html) для Terraform:
->    1. Рекомендуемый вариант: [Terraform Cloud](https://app.terraform.io/)
->    1. Альтернативный вариант: S3 bucket в созданном AWS аккаунте
-> 1. Настройте [workspaces](https://www.terraform.io/docs/language/state/workspaces.html)
->    1. Рекомендуемый вариант: создайте два workspace: *stage* и *prod*. В случае выбора этого варианта все последующие шаги должны учитывать факт существования нескольких workspace.
->    1. Альтернативный вариант: используйте один workspace, назвав его *stage*. Пожалуйста, не используйте workspace создавайемый терраформом по-умолчанию (*default*).
-> 1. Создайте VPC при помощи готового [модуля](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest) от AWS.
-> 1. При помощи Terraform подготовьте как минимум 3 виртуальных машины EC2 для создания kubernetes-кластера. Выберите тип виртуальной машины самостоятельно с учётом требовании к производительности и стоимости. Если в дальнейшем поймете, что необходимо сменить тип инстанса, используйте Terraform для внесения изменений.
-> 1. Во время выполнения также понадобится создать [security groups](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) и некоторые другие ресурсы.
-> 1. Следует учитывать, что доступ к EC2 должен быть возможен через Интернет, а не только по локальной сети.
-> 1. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
-> 1. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://www.terraform.io/docs/language/settings/backends/index.html) убедитесь, что применение изменений успешно проходит, используя web-интерфейс terraform cloud.
->
+Для начала необходимо подготовить облачную инфраструктуру в облаке AWS при помощи [Terraform](https://www.terraform.io/).
+
+Особенности выполнения:
+- Для выполнения задания следует активировать купон AWS, полученный от куратора курса.
+- Бюджет купона ограничен, что следует иметь в виду при проектировании инфраструктуры и использовании ресурсов.
+- Следует использовать последнюю стабильную версию [Terraform](https://www.terraform.io/).
+
+Предварительная подготовка к установке и запуску kubernetes-кластера.
+1. При помощи IAM создайте service account, который будет в дальнейшем использоваться Terraform для работы с инфраструктурой.
+1. Подготовьте [backend](https://www.terraform.io/docs/language/settings/backends/index.html) для Terraform:
+   1. Рекомендуемый вариант: [Terraform Cloud](https://app.terraform.io/)
+   1. Альтернативный вариант: S3 bucket в созданном AWS аккаунте
+1. Настройте [workspaces](https://www.terraform.io/docs/language/state/workspaces.html)
+   1. Рекомендуемый вариант: создайте два workspace: *stage* и *prod*. В случае выбора этого варианта все последующие шаги должны учитывать факт существования нескольких workspace.
+   1. Альтернативный вариант: используйте один workspace, назвав его *stage*. Пожалуйста, не используйте workspace создавайемый терраформом по-умолчанию (*default*).
+1. Создайте VPC при помощи готового [модуля](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest) от AWS.
+1. При помощи Terraform подготовьте как минимум 3 виртуальных машины EC2 для создания kubernetes-кластера. Выберите тип виртуальной машины самостоятельно с учётом требовании к производительности и стоимости. Если в дальнейшем поймете, что необходимо сменить тип инстанса, используйте Terraform для внесения изменений.
+1. Во время выполнения также понадобится создать [security groups](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) и некоторые другие ресурсы.
+1. Следует учитывать, что доступ к EC2 должен быть возможен через Интернет, а не только по локальной сети.
+1. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
+1. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://www.terraform.io/docs/language/settings/backends/index.html) убедитесь, что применение изменений успешно проходит, используя web-интерфейс terraform cloud.
 
 
 Ожидаемые результаты:
@@ -121,27 +120,3 @@
 
 
 
-# Решение
-
-Установлена последняя стабильная версия [Terraform](https://www.terraform.io/).
-
-![terraform](terraform.png)
-
-pip3 install -r requirements.txt
-ansible-playbook -i kubespray/inventory/mycluster/inventory.ini  kubespray/cluster.yml -u ubuntu --ask-pass -b --ask-become-pass 
-
-ansible-playbook -i kubespray/inventory/diplom/inventory.ini kubespray/cluster.yml -e ansible_user=ubuntu -b --become-user=root
-
-
-
-
-
-https://hub.docker.com/repository/docker/perovss/nginx.app
-
-
-
-CI
-
-
-
-https://gitlab.com/perov.ss/netology-diplom/-/jobs/1781112211
