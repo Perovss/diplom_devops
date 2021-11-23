@@ -62,9 +62,9 @@ on linux_amd64
 ##  Что необходимо для сдачи задания
 1. [Репозиторий с конфигурационными файлами терраформа и готовность продемонстировать создание всех рессурсов с нуля.](https://github.com/Perovss/diplom_terraform_cloud)
 
-2. Пример pull request с комментариями созданными atlantis'ом или снимки экрана из Terraform Cloud.![t2](/home/serge/lessons/diplom_devops/t2.png)
-
-   ![t1](/home/serge/lessons/diplom_devops/t1.png)
+2. Пример pull request с комментариями созданными atlantis'ом или снимки экрана из Terraform Cloud.
+![t1](t1.png)
+![t2](t2.png)
 3. Репозиторий с конфигурацией ansible, если был выбран способ создания кубернетес кластера при помощи ansible.
 
 4. Репозиторий с Dockerfile тестового приложения и ссылка на собранный docker image.
