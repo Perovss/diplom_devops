@@ -105,18 +105,13 @@ on linux_amd64
 
 ##  Что необходимо для сдачи задания
 1. [Репозиторий с конфигурационными файлами терраформа](https://github.com/Perovss/diplom_terraform_cloud) и готовность продемонстировать создание всех рессурсов с нуля.
-
 2. Пример pull request с комментариями созданными atlantis'ом или снимки экрана из Terraform Cloud.
     ![t1](t1.png)
     ![t2](t2.png)
-
 3. [Репозиторий с конфигурацией ansible](https://github.com/Perovss/diplom_ansible/blob/main/kubespray/inventory/diplom/inventory.ini), если был выбран способ создания кубернетес кластера при помощи ansible.
-
 4. [Репозиторий с Dockerfile тестового приложения](https://gitlab.com/perov.ss/netology-diplom) и [ссылка на собранный docker image](https://hub.docker.com/repository/docker/perovss/nginx.app).
-
 5. [Репозиторий с конфигурацией кубернетес кластера](https://github.com/Perovss/diplom_k8s_config/tree/main/manifests).
-
-6. Ссылка на [тестовое приложение](http://3.14.250.62:30001/) и [веб интерфейс графаны](http://3.14.250.62:30000/d/efa86fd1d0c121a26444b636a3f509a8/kubernetes-compute-resources-cluster?orgId=1&refresh=10s) с данными доступа. (`admin` / `admin`).
+6. Ссылка на [тестовое приложение](http://3.14.250.62:30001/) и [веб интерфейс графаны](http://3.14.250.62:30000) с данными доступа. (`admin` / `admin`).
 
 ![](gr1.png)
 
